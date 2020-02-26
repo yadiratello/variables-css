@@ -1,0 +1,21 @@
+*, *::before,*::after{
+    box-sizing: border-box;
+}
+
+:root{
+    --bar-color:red;
+    --width:0;
+}
+
+/* dibujando la barra */
+body::before{
+    content: '';
+    display: block;
+    height: 5px;
+    position: fixed;
+    top:0;
+    left:0;
+    background-color: var(--bar-color);
+    /* aqui ocurre la magia */
+    width: calc(var(--width)*1vw);
+}

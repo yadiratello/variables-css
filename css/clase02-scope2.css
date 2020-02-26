@@ -1,0 +1,8 @@
+/*
+Las variables css que se declaran en la pseudoclase :root se pueden acceder desde archivos externos como este
+
+*/
+
+h1{
+	color: var(--main-color);
+}

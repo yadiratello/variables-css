@@ -1,0 +1,109 @@
+/*
+## DIFERENCIAS ENTRE VARIABLES SASS Y VARIABLES CSS
+
+#### SASS:
+
+1. se pueden declarar sin selector
+2. tiene scope de bloque
+3. operaciones aritmeticas directas
+4. funciones para los colores
+5. las variables pueden ser interpoladas
+6. No se pueden redefinir
+7. No existen despues de la compilacion
+
+#### CSS :
+
+1. necesitan un selector
+2. tiene scope de DOM
+3. Operaciones aritmeticas con calc
+4. no tienen funciones para los colores
+5. las variables NO pueden ser interpoladas
+6. Se pueden redefinir
+7. existen en el DOM
+*/
+
+/**************  1.  ************/
+$color : green;
+$size: 3rem;
+
+:root{
+	--size:3rem;
+}
+/*******************************/
+
+
+body{
+	color: $color;
+	
+	--color : blue;
+	
+	background: var(--color);
+}
+
+h1{
+	$color-dos : yellow;
+	--color: yellow;
+}
+
+h2{
+//	color:$color-dos;//no se puede acceder a esta variable ya que es de ambito de bloque
+	--color:pink;
+	color: var(--color);
+	font-size: $size;
+	background: $color;
+	/****************    3.  ***************/
+//	height: ($size  * 2) + 3rem;
+	height: calc(var(--size) * 2 + 3rem);
+	/**************************************/
+}
+
+/****************	4 	****************/
+div{
+	background: darken($color, 10);
+}
+/**************************************/
+
+
+
+/**************  5.  ************/
+$orangered : orangered;
+$orange : orange;
+$yellow : yellow;
+
+@each $color in $orangered, $orange, $yellow{
+	.#{$color}{
+		color : $color;
+	}
+}
+
+
+//medias queries
+$largeBp : 1024px;
+:root{
+	--largeBp : 1024px;
+}
+
+@media screen and (min-width : $largeBp){
+	p {
+		background: yellow;
+	}
+}
+/********************************/
+
+
+/**************		6.	***************/
+$red : red;
+
+:root{
+	--red : red;
+}
+
+p{
+	color: var(--red);
+}
+
+.p{
+	$red : orange;
+	color: $red;
+}
+/*************************************/

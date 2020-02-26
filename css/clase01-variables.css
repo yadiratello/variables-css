@@ -1,0 +1,26 @@
+
+:root{
+	--color: purple;
+	--link-color: green;
+/*	--bg-color : blue;*/
+	--bg-color-dos : orange;
+	--box-shadow : 2px 2px 5px #000;
+}
+
+html{
+	background: var(--bg-color-dos, var(--bg-color,var(--color)));
+}
+
+p{
+	color: var(--color);
+}
+
+a{
+	color: var(--link-color);
+}
+
+h1{
+	color: var(--bg-color, red);
+	-webkit-box-shadow: var(--box-shadow);
+	box-shadow: var(--box-shadow);
+}

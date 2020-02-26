@@ -1,0 +1,27 @@
+/*
+VARIABLES CSS (2) - SCOPE
+
+el scope es el ambito en el que una variable existe y desde la cual puede ser recuperado su valor.
+
+Las variables CSS tienen scope de DOM
+
+*/
+
+:root{
+	--main-color: pink;
+}
+
+
+p{
+	color : var(--color);
+}
+
+
+article {
+	--color:blue
+}
+
+/*
+section{
+	--color:green;
+}*/

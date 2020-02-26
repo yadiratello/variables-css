@@ -1,0 +1,64 @@
+:root{
+    --main-color: blue;
+    --font-size:1em;
+    --border-color:#ccc;
+    --text-color:#444;
+    --before-text:'';
+}
+
+img{
+    max-width: 100%;
+}
+
+[class*=button]{
+    display: inline-block;
+    padding: 1em 2em;
+    text-decoration: none;
+    margin: 1em;
+    border: none;
+    border-radius: .25rem;
+    color: #fff;
+    background-color: var(--main-color);
+    font-size: var(--font-size);
+}
+
+.button--alert{
+    --main-color: red;
+}
+.button--cta{
+    --main-color: orange;
+}
+.button--small{
+    --font-size:.75em;
+}
+.button--big{
+    --font-size:1.25em;
+}
+
+.courses{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 1em;
+}
+.card{
+    padding: .5em;
+    background: #fff;
+    border:1px solid var(--border-color);
+}
+.card::before{
+    content: var(--before-text);
+}
+.card h2{
+    margin: .5em 0 0;
+    font-size: .75em;
+    color: var(--text-color);
+}
+.card--discount{
+    --border-color: red;
+}
+.card--discount{
+    --before-text: 'Con descuento';
+}
+.card--discount h2{
+    --text-color: red;
+}

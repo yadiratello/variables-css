@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Indicador de scrall</title>
+    <link rel="stylesheet" href="css/clase06-ejercicio-indicador-de-scroll.css">
+</head>
+<body>
+    <h1>Ejercicio: Indicador de scroll</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia corrupti distinctio illo odio vero at inventore! Velit et dignissimos vitae omnis voluptate excepturi alias recusandae quaerat fugit! Esse, autem suscipit nemo adipisci et totam quod sequi explicabo nesciunt tempora? Eaque nihil ab quod, sed nostrum voluptatem aperiam neque repellat.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia corrupti distinctio illo odio vero at inventore! Velit et dignissimos vitae omnis voluptate excepturi alias recusandae quaerat fugit! Esse, autem suscipit nemo adipisci et totam quod sequi explicabo nesciunt tempora? Eaque nihil ab quod, sed nostrum voluptatem aperiam neque repellat.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia corrupti distinctio illo odio vero at inventore! Velit et dignissimos vitae omnis voluptate excepturi alias recusandae quaerat fugit! Esse, autem suscipit nemo adipisci et totam quod sequi explicabo nesciunt tempora? Eaque nihil ab quod, sed nostrum voluptatem aperiam neque repellat.</p>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi mollitia corrupti distinctio illo odio vero at inventore! Velit et dignissimos vitae omnis voluptate excepturi alias recusandae quaerat fugit! Esse, autem suscipit nemo adipisci et totam quod sequi explicabo nesciunt tempora? Eaque nihil ab quod, sed nostrum voluptatem aperiam neque repellat.</p>
+
+    <script>
+        //identificar el scroll maximo(al llegar al final)
+        const height1 = document.documentElement.scrollHeight;
+        const height2 = document.documentElement.clientHeight;
+
+        const scrollUnit = (height1-height2)/100;
+
+        const rootStyles = document.documentElement.style;
+
+        addEventListener('scroll', () => {
+            // console.log(Math.round(scrollY/scrollUnit));
+            rootStyles.setProperty('--width', `${Math.round(scrollY/scrollUnit)}`);
+        })
+    </script>
+</body>
+</html>

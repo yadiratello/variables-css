@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ejercicio 07</title>
+    <link rel="stylesheet" href="css/clase07-ejercicio-selector-de-color.css">
+</head>
+
+<body>
+    <label for="">Red
+        <input type="range" value="0" step="1" max="255" id="red">
+    </label>
+    <label for="">green
+        <input type="range" value="0" step="1" max="255" id="green">
+    </label>
+    <label for="">Blue
+        <input type="range" value="0" step="1" max="255" id="blue">
+    </label>
+
+
+    <script>
+        const red = document.getElementById('red');
+        const green = document.getElementById('green');
+        const blue = document.getElementById('blue');
+        const rootStyle = document.documentElement.style
+
+        const changeColorRed = e => {
+            rootStyle.setProperty('--red',e.target.value);
+        }
+        const changeColorGreen = e => {
+            rootStyle.setProperty('--green',e.target.value);
+        }
+        const changeColorBlue = e => {
+            rootStyle.setProperty('--blue',e.target.value);
+        }
+
+        red.addEventListener('change', (e) => {
+            changeColorRed(e);
+        })
+
+        red.addEventListener('mousemove', e => {
+            changeColorRed(e);
+        })
+
+        green.addEventListener('change', (e) => {
+            changeColorGreen(e);
+        })
+
+        green.addEventListener('mousemove', e => {
+            changeColorGreen(e);
+        })
+
+        blue.addEventListener('change', (e) => {
+            changeColorBlue(e);
+        })
+
+        blue.addEventListener('mousemove', e => {
+            changeColorBlue(e);
+        })
+    </script>
+</body>
+
+</html>
